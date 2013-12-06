@@ -6,7 +6,7 @@
 # catalog-version 2.0
 Name:		texlive-universa
 Version:	2.0
-Release:	4
+Release:	5
 Summary:	Herbert Bayer's 'universal' font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/universa
