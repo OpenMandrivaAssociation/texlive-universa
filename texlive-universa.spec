@@ -1,6 +1,6 @@
 Name:		texlive-universa
 Version:	51984
-Release:	1
+Release:	2
 Summary:	Herbert Bayer's 'universal' font
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/universa
