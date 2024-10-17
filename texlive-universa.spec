@@ -3,7 +3,7 @@ Version:	51984
 Release:	2
 Summary:	Herbert Bayer's 'universal' font
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/universa
+URL:		https://www.ctan.org/tex-archive/fonts/universa
 License:	GPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/universa.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/universa.doc.r%{version}.tar.xz
