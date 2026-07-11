@@ -1,48 +1,23 @@
-Name:		texlive-universa
-Version:	51984
-Release:	2
-Summary:	Herbert Bayer's 'universal' font
+%global tl_name universa
+%global tl_revision 51984
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	2.1
+Release:	%{tl_revision}.1
+Summary:	Herbert Bayers universal font
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/fonts/universa
-License:	GPL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/universa.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/universa.doc.r%{version}.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/universa.source.r%{version}.tar.xz
+License:	gpl
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/universa.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/universa.doc.r%{tl_revision}.tar.xz
+Source2:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/universa.source.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-An implementation of the universal font by Herbert Bayer of the
-Bauhaus school. The MetaFont sources of the fonts, and their
-LaTeX support, are all supplied in a LaTeX documented source
-(.dtx) file.
+An implementation of the "universal" font by Herbert Bayer of the
+Bauhaus school. The Metafont sources of the fonts, and their LaTeX
+support, are all supplied in a LaTeX documented source (.dtx) file.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/fonts/source/public/universa
-%{_texmfdistdir}/fonts/tfm/public/universa
-%{_texmfdistdir}/tex/latex/universa
-%doc %{_texmfdistdir}/doc/fonts/universa
-#- source
-%doc %{_texmfdistdir}/source/fonts/universa
-
-#-----------------------------------------------------------------------
-%prep
-%setup -c -a1 -a2
-%autopatch -p1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts tex doc source %{buildroot}%{_texmfdistdir}
